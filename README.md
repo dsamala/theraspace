@@ -20,8 +20,8 @@ See deployed app here:
 - AAU, I want to perform CRUD records of patients
 - AAU, I want to perform CRUD records of clinicians
 - AAU, I want to assign clinician/s to patients
-- AAU, I want to see what patients do not have clinicians
-- AAU, I want to see what clinicians do not have patients
+- AAU, I want to see list of patients do not have clinicians
+- AAU, I want to see list of clinicians do not have patients
 
 ### User Flow
 ![User Flow](https://user-images.githubusercontent.com/92316626/160757920-6156efb6-6db1-4d81-833b-486d76052e0b.png)
