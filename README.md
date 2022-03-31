@@ -35,6 +35,8 @@ See deployed app here:
 - AAU, I want to perform CRUD records of patients
 - AAU, I want to perform CRUD records of clinicians
 - AAU, I want to assign clinician/s to patients
+- AAU, I want to see an individual record of a patient
+- AAU, I want to see an individual record of a clinician
 - AAU, I want to see list of patients do not have clinicians
 - AAU, I want to see list of clinicians do not have patients
 
