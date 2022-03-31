@@ -35,11 +35,13 @@ See deployed app here:
 - AAU, I want to perform CRUD records of patients
 - AAU, I want to perform CRUD records of clinicians
 - AAU, I want to assign clinician/s to patients
+- AAU, I want to see an individual record of a patient
+- AAU, I want to see an individual record of a clinician
 - AAU, I want to see list of patients do not have clinicians
 - AAU, I want to see list of clinicians do not have patients
 
 ### User Flow
-![User Flow](https://user-images.githubusercontent.com/92316626/160757920-6156efb6-6db1-4d81-833b-486d76052e0b.png)
+![Theraspace - User Flow](https://user-images.githubusercontent.com/92316626/160980332-6c7ca2d8-089f-4a92-8707-3e33b4522887.jpg)
 
 ### Wireframe
 ![Screen Shot 2022-03-30 at 8 35 04 PM](https://user-images.githubusercontent.com/92316626/160971318-c73ae310-c31d-43fa-91f1-70ba599de186.png)
@@ -60,4 +62,5 @@ See deployed app here:
 - Schedule Functionality that allows for tracking patients
 - File upload for all patient-related documents
 - Field records that allows for sharing notes between users/admins
+
 
