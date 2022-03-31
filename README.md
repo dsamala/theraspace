@@ -5,6 +5,21 @@ Theraspace is a simple patient management portal that provides administrative to
 <br/>
 
 ## Table of Contents
+[Get Started](https://github.com/dsamala/theraspace/#get-started) 
+|
+[User Story](https://github.com/dsamala/theraspace/#user-story) 
+|
+[User Flow](https://github.com/dsamala/theraspace/#user-flow)
+|
+[Wireframe](https://github.com/dsamala/theraspace/#wireframe)
+|
+[Data ERD](https://github.com/dsamala/theraspace/#data-erd)
+|
+[Technologies Used](https://github.com/dsamala/theraspace/#technologies-used)
+|
+[Unsolved Problems](https://github.com/dsamala/theraspace/#unsolved-problems)
+|
+[Future Enhancements](https://github.com/dsamala/theraspace/#future-enhancements)
 
 
 ## Get Started
@@ -27,13 +42,22 @@ See deployed app here:
 ![User Flow](https://user-images.githubusercontent.com/92316626/160757920-6156efb6-6db1-4d81-833b-486d76052e0b.png)
 
 ### Wireframe
+![Screen Shot 2022-03-30 at 8 35 04 PM](https://user-images.githubusercontent.com/92316626/160971318-c73ae310-c31d-43fa-91f1-70ba599de186.png)
 
 ### Data ERD 
 ![Theraspace (P4 - ERD)](https://user-images.githubusercontent.com/92316626/160757925-c5940813-e966-4457-9ba2-07062cf5a643.png)
 
 ## Technologies Used:
+- Python
+- Django
+- PostgreSQL
 
 
 ## Unsolved Problems:
 
+
 ## Future Enhancements:
+- Schedule Functionality that allows for tracking patients
+- File upload for all patient-related documents
+- Field records that allows for sharing notes between users/admins
+
