@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    
+        
+    <div class="sign-in-container">
+        <form method="POST"></form>
+            <h1 class="sign-in-header">Sign in</h1>
+            {% csrf_token %}
+            
+            <!-- <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Password"  required>
+            <input type="submit" value="login"> -->
+
+            {{form}}
+            <input type="submit" value="Submit" />
+        </form>
+    </div>
+  
+    <div class="sign-in-overlay">
+        <h1 class="sign-in-header">Welcome To Theraspace</h1>
+        <p>Please enter your credentials</p>
+        <a href="/signup">Sign Up</a>
+    </div>
+
+</div>  
+{% endblock %}

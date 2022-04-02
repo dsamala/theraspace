@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container">
+    
+    {% csrf_token %}
+<div class="sign-in-container">
+    <h1 class="sign-in-header">Welcome Back</h1>
+    <p>To keep connected, please login with your information</p>
+    <a href="/login">Log In</a>
+</div>
+
+<div class="sign-in-overlay">
+   
+    <form action="#" method="POST"></form>
+    <h1 class="sign-in-header">Sign in</h1>
+   {% csrf_token %}
+    <!-- <input type="email" placeholder="Email" required>
+    <input type="password" placeholder="Password"  required> -->
+    {{form}}
+    <button type="submit">Sign up</button>
+</form>
+</div>
+
+</div>  
+
+{% endblock %}

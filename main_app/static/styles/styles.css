@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f6f5f7;
+}
+
+/* Login Css */
+.container{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    margin: 0 10%;
+}
+
+.sign-in-container{
+    position: absolute, sticky;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 15%;
+    width: 700px;
+    max-width: 100%;
+    min-height: 480px;
+    border: 5px solid green;
+}
+
+.sign-in-overlay{
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 15%;
+    width: 700px;
+    max-width: 100%;
+    min-height: 480px;
+    border: 5px solid brown;
+}
+
+.sign-in-header{
+    font-size: 45px;
+}
