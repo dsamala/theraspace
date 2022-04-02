@@ -3,23 +3,46 @@
 
 <div class="container">
     
-    {% csrf_token %}
+    {% if form.non_field_errors %}
+    <ul>
+        {% for error in form.non_field_errors %}
+    {% endfor %}
+    </ul>
+    {% endif %}
+
+    {{form.errors}}
+
 <div class="sign-in-container">
     <h1 class="sign-in-header">Welcome Back</h1>
     <p>To keep connected, please login with your information</p>
     <a href="/login">Log In</a>
 </div>
 
+
+
+
+{{form.errors}}
 <div class="sign-in-overlay">
-   
-    <form action="#" method="POST"></form>
     <h1 class="sign-in-header">Sign in</h1>
-   {% csrf_token %}
-    <!-- <input type="email" placeholder="Email" required>
-    <input type="password" placeholder="Password"  required> -->
-    {{form}}
-    <button type="submit">Sign up</button>
-</form>
+
+    {% if form.non_field_errors %}
+    <ul>
+        {% for error in form.non_field_errors %}
+    {% endfor %}
+    </ul>
+    {% endif %}
+
+    <form method="POST">
+    {% csrf_token %}
+
+    {{ form.username.label_tag }}
+    {{form.username}}
+    {{ form.password1.label_tag }}
+    {{form.password1}}
+    {{ form.password2.label_tag }}
+    {{form.password2}}
+    <input type="submit" value="Sign Up" />
+    </form>
 </div>
 
 </div>  

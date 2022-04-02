@@ -55,7 +55,7 @@ def signup_view(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return HttpResponseRedirect('/')
+            return HttpResponseRedirect('/login')
         else:
             HttpResponse('<h1>Please Try Again</h1>')
     else:
