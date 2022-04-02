@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="home-container">
+
+    <div class="side-nav">
+        <a href="/"><h1>Theraspace</h1></a>
+        <h2>Menu</h2>
+        <a href="/patients">Patients</a>
+        <a href="/clinicians">Clinicians</a>
+        <a href="/clinicians/new">Add Clinician</a>
+    </div>
+
+    <div class="list-container">
+       
+        <div class="clinician-list">
+            <h1>Clinician Details</h1>
+            
+                <p>{{clinician.name}}</p>
+                <p>{{clinician.discipline}}</p>
+
+        </div>
+        
+        <div class="clinician-actions">
+            <a href="{% url 'clinician_update' clinician.pk %}">Update</a>
+            <a href="{% url 'clinician_delete' clinician.pk %}">Delete</a>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

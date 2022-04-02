@@ -89,3 +89,33 @@ class PatientDelete(DeleteView):
     model = Patient
     template_name = 'patient_delete_confirm.html'
     success_url = '/patients'
+
+class ClinicianList(TemplateView):
+    template_name = 'clinician_list.html'
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["clinicians"] = Clinician.objects.all()
+        return context
+
+class Clinician_New(CreateView):
+    model = Clinician
+    fields = ['name', 'discipline']
+    template_name = 'clinician_new.html'
+    success_url = '/clinicians'
+
+class ClinicianDetail(DetailView):
+    model = Clinician
+    template_name = 'clinician_detail.html'
+
+class ClinicianUpdate(UpdateView):
+    model = Clinician
+    fields = ['name', 'discipline']
+    template_name = 'clinician_update.html'
+    def get_success_url(self):
+        return reverse('clinician_detail', kwargs={'pk': self.object.pk})
+
+class ClinicianDelete(DeleteView):
+    model = Clinician
+    template_name = 'clinician_delete_confirm.html'
+    success_url = '/clinicians'
+    

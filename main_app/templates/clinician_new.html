@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="home-container">
+
+    <div class="side-nav">
+        <a href="/"><h1>Theraspace</h1></a>
+        <h2>Menu</h2>
+        <a href="/patients">Patients</a>
+        <a href="/clinicians">Clinicians</a>
+        <a href="/clinicians/new">Add Clinician</a>
+
+    </div>
+
+    <div class="form-container">
+       
+        <div class="clinician-record">
+            <h1>Clinician Record Form</h1>
+            <form method="POST">
+                {% csrf_token %}
+                {{form}}
+                <input type="submit" value="Submit"/>
+            </form>
+        </div>
+        
+    </div>
+</div>
+{% endblock %}
