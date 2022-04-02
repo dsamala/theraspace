@@ -23,7 +23,6 @@ class Home(TemplateView):
         return context
 
 
-
 def login_view(request):
     if request.method == 'POST':
         form = AuthenticationForm(request, request.POST)
@@ -61,3 +60,32 @@ def signup_view(request):
     else:
         form = UserCreationForm()
         return render(request, 'signup.html', {'form': form})
+
+class PatientList(TemplateView):
+    template_name = 'patient_list.html'
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["patients"] = Patient.objects.all()
+        return context
+
+class Patient_New(CreateView):
+    model = Patient
+    fields = ['firstname', 'lastname', 'age', 'gender', 'zip', 'diagnosis', 'clinician']
+    template_name = "patient_new.html"
+    success_url = '/patients'
+
+class PatientDetail(DetailView):
+    model = Patient
+    template_name = 'patient_detail.html'
+
+class PatientUpdate(UpdateView):
+    model = Patient
+    fields = ['firstname', 'lastname', 'age', 'gender', 'zip', 'diagnosis', 'clinician']
+    template_name = 'patient_update.html'
+    def get_success_url(self):
+        return reverse('patient_detail', kwargs={'pk': self.object.pk})
+
+class PatientDelete(DeleteView):
+    model = Patient
+    template_name = 'patient_delete_confirm.html'
+    success_url = '/patients'
