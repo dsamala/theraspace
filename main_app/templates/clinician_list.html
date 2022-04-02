@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="home-container">
+
+    <div class="side-nav">
+        <a href="/"><h1>Theraspace</h1></a>
+        <h2>Menu</h2>
+        <a href="/patients">Patients</a>
+        <a href="/clinicians">Clinicians</a>
+        <a href="/clinicians/new">Add Clinician</a>
+
+    </div>
+
+    <div class="list-container">
+       
+        <div class="clinician-list">
+            <h1>Clinician List</h1>
+            {% for clinician in clinicians %}
+                <a href="{% url 'clinician_detail' clinician.pk %}">{{clinician.name}}</a>
+                <p>{{clinician.discpiline}}</p>
+            {% endfor %}
+        </div>
+        
+    </div>
+</div>
+{% endblock %}
