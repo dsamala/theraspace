@@ -8,8 +8,18 @@ body {
     background-color: #f6f5f7;
 }
 
+a {
+    text-decoration: none;
+    color: black;
+}
 
-/* Login Css */
+:root{
+    --teal: #4EDBC1;
+    --gray: #808080;
+    --white: #FFFFFF;
+}
+
+/* Login CSS */
 .container{
     display: flex;
     flex-direction: row;
@@ -44,4 +54,39 @@ body {
 
 .sign-in-header{
     font-size: 45px;
+}
+
+/* Home */
+.home-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.list-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+    height: 50%;
+    width: 350px;
+}
+
+.side-nav{
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    width: 225px;
+    height: 100%;
+    padding: 20px;
+   background-color: var(--teal);
+    border: solid 4px blue;
+}
+
+.patient-list{
+    border: solid 4px blue;
+}
+
+.clinician-list{
+    border: solid 4px blue;
 }

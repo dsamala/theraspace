@@ -1,27 +1,37 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<div class="container">
+<div class="home-container">
 
+    <div class="side-nav">
+        <h1>Theraspace</h1>
+        <h2>Menu</h2>
+        <a href="#">Patients</a>
+        <a href="#">Clinicians</a>
+        <a href="#">Add Patient</a>
+        <a href="#">Add Clinician</a>
 
-<h1>Ola Tinola</h1>
-
-
-    <div class="patient-list">
-        {% for patient in patients %}
-            <p>{{patient.name}}</p>
-            <p>{{patient.age}}</p>
-        {% endfor %}
     </div>
 
+    <div class="list-container">
+       
+        <div class="patient-list">
+            <h1>Patient List</h1>
+            {% for patient in patients %}
+                <p>{{patient.firstname}}</p>
+                <p>{{patient.age}}</p>
+            {% endfor %}
+        </div>
 
 
-    <div class="clinician-list">
-        {%for clinician in clinicians %}
-            <p>{{clinician.name}}</p>
-            <p>{{clinician.discipline}}</p>
-        {% endfor %}
+
+        <div class="clinician-list">
+            <h1>Clinician List</h1>
+            {%for clinician in clinicians %}
+                <p>{{clinician.name}}</p>
+                <p>{{clinician.discipline}}</p>
+            {% endfor %}
+        </div>
     </div>
-
 </div>
 {% endblock %}
