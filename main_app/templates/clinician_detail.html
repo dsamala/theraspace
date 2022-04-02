@@ -19,6 +19,12 @@
                 <p>{{clinician.name}}</p>
                 <p>{{clinician.discipline}}</p>
 
+                {% for patient in patients %}
+                    <p>{{patient.lastname}}</p>
+                {% empty %}
+                    <p>This clinician currently does not have any patients.</p>
+                {% endfor %}
+
         </div>
         
         <div class="clinician-actions">

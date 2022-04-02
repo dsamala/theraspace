@@ -37,7 +37,7 @@ class Patient(models.Model):
     clinician = models.ManyToManyField(Clinician)
 
     def __str__(self):
-        return self.name
+        return self.lastname
 
     class Meta:
         ordering = ['lastname']

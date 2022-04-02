@@ -20,7 +20,13 @@
                 <p>{{patient.address}}</p>
                 <p>{{patient.zip}}</p>
                 <p>{{patient.diagnosis}}</p>
-                <p>{{patient.clinician.all}}</p>
+                <p>{{patient.date_created}}</p>
+                <p>{{patient.date_updated}}</p>
+                
+                {% for clinician in patient.clinician.all %}
+                <p>{{clinician.name}}</p>
+                <p>{{clinician.discipline}}</p>
+                {% endfor %}
         </div>
         
         <div class="patient-actions">
