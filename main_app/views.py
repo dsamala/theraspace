@@ -81,13 +81,6 @@ class PatientDetail(DetailView):
     model = Patient
     template_name = 'patient_detail.html'
 
-# class PatientUpdate(UpdateView):
-#     model = Patient
-#     fields = ['firstname', 'lastname', 'age', 'gender', 'zip', 'diagnosis', 'clinician']
-#     checkboxfield = forms.ModelMultipleChoiceField(widget=forms.CheckboxSelectMultiple, queryset=Clinician.objects.all(), to_field_name="clinician")
-#     template_name = 'patient_update.html'
-#     def get_success_url(self):
-#         return reverse('patient_detail', kwargs={'pk': self.object.pk})
 
 class PatientUpdate(UpdateView):
     model = Patient
@@ -114,29 +107,12 @@ class Clinician_New(CreateView):
     template_name = 'clinician_new.html'
     success_url = '/clinicians'
 
-# class ClinicianDetail(DetailView):
-#     model = Clinician
-#     template_name = 'clinician_detail.html'
-    
-    # def get_context_data(self, **kwargs):
-    #     context = super().get_context_data(**kwargs)
-    #     context["clinician"] = Clinician.objects.all()
-    #     return context
-
-    # def clinician_show(request, clinician_id):
-    #     clinician = Clinician.objects.get(id=clinician_id)
-    #     print(clinician)
-    #     return render({'clinician': clinician})
 
 def clinician_show(request, clinician_id):
     clinician = Clinician.objects.get(id=clinician_id)
     patients = list(clinician.patient_set.all())
     print(patients)
     return render(request, 'clinician_detail.html', {'clinician': clinician, 'patients': patients})        
-
-# def cattoys_show(request, cattoy_id):
-#     cattoy = CatToy.objects.get(id=cattoy_id)
-#     return render(request, 'cattoy_show.html', {'cattoy': cattoy})
 
 
 class ClinicianUpdate(UpdateView):

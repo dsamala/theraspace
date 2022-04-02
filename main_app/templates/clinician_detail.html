@@ -20,7 +20,7 @@
                 <p>{{clinician.discipline}}</p>
 
                 {% for patient in patients %}
-                    <p>{{patient.lastname}}</p>
+                    <p>{{patient.lastname}}, {{patient.firstname}}</p>
                 {% empty %}
                     <p>This clinician currently does not have any patients.</p>
                 {% endfor %}
