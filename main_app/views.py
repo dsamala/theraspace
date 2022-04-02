@@ -4,8 +4,10 @@ from django.views.generic import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse
-from .models import Patient, Clinician
+from django import forms
+from .forms import UpdatePatientForm
 from django.contrib.auth.models import User
+from main_app.forms import UpdatePatientForm
 from main_app.models import Patient, Clinician
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
@@ -78,9 +80,17 @@ class PatientDetail(DetailView):
     model = Patient
     template_name = 'patient_detail.html'
 
+# class PatientUpdate(UpdateView):
+#     model = Patient
+#     fields = ['firstname', 'lastname', 'age', 'gender', 'zip', 'diagnosis', 'clinician']
+#     checkboxfield = forms.ModelMultipleChoiceField(widget=forms.CheckboxSelectMultiple, queryset=Clinician.objects.all(), to_field_name="clinician")
+#     template_name = 'patient_update.html'
+#     def get_success_url(self):
+#         return reverse('patient_detail', kwargs={'pk': self.object.pk})
+
 class PatientUpdate(UpdateView):
     model = Patient
-    fields = ['firstname', 'lastname', 'age', 'gender', 'zip', 'diagnosis', 'clinician']
+    form_class = UpdatePatientForm
     template_name = 'patient_update.html'
     def get_success_url(self):
         return reverse('patient_detail', kwargs={'pk': self.object.pk})
