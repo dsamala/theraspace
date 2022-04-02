@@ -5,7 +5,7 @@ from django.db import models
 DISCIPLINE_CHOICES = (
     ("PT", "Physical Therapist"),
     ("OT", "Occupational Therapist"),
-    ("SP", "Speech Therapist"),
+    ("ST", "Speech Therapist"),
 )
 
 GENDER_CHOICES = (
@@ -30,7 +30,7 @@ class Patient(models.Model):
     age = models.IntegerField()
     gender = models.CharField(max_length=10, choices=GENDER_CHOICES)
     address = models.CharField(max_length=300)
-    zip = models.IntegerField
+    zip = models.IntegerField()
     date_created = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)
     diagnosis = models.CharField(max_length=150)

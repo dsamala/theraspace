@@ -13,9 +13,16 @@ from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 
 # Create your views here.
-
+@method_decorator(login_required, name='dispatch')
 class Home(TemplateView):
     template_name='home.html'
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["patients"] = Patient.objects.all()
+        context["clinicians"] = Clinician.objects.all()
+        return context
+
+
 
 def login_view(request):
     if request.method == 'POST':
@@ -30,12 +37,13 @@ def login_view(request):
                     return HttpResponseRedirect('/')
                 else:
                     print('The account does not exist or has been disabled.')
+                    return HttpResponseRedirect('/login')
             else:
                 print('The username and/or password is incorrect.')
                 return HttpResponseRedirect('/login')
     else:
         form = AuthenticationForm()
-        return render(request, 'login.html', {'form': form})
+        return render(request, 'login.html', {'form': form})     
 
 def logout_view(request):
     logout(request)

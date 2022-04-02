@@ -1,7 +1,25 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+<div class="container">
+
 
 <h1>Ola Tinola</h1>
 
+
+    <div class="patient-list">
+        {% for patient in patients %}
+            <p>{{patient.name}}</p>
+            <p>{{patient.age}}</p>
+    </div>
+
+
+
+    <div class="clinician-list">
+        {%for clinician in clinicians %}
+            <p>{{clinician.name}}</p>
+            <p>{{clinician.discipline}}</p>
+    </div>
+
+</div>
 {% endblock %}
