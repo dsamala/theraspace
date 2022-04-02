@@ -8,8 +8,7 @@
         <h2>Menu</h2>
         <a href="/patients">Patients</a>
         <a href="/clinicians">Clinicians</a>
-        <a href="patient/new">Add Patient</a>
-        <a href="clinician/new">Add Clinician</a>
+        <a href="/patient/new">Add Patient</a>
 
     </div>
 
@@ -18,20 +17,12 @@
         <div class="patient-list">
             <h1>Patient List</h1>
             {% for patient in patients %}
-                <p>{{patient.firstname}}</p>
+                <a href="{% url 'patient_detail' patient.pk %}">{{patient.firstname}}</a>
                 <p>{{patient.age}}</p>
+                <p>{{patient.diagnosis}}</p>
             {% endfor %}
         </div>
-
-
-
-        <div class="clinician-list">
-            <h1>Clinician List</h1>
-            {%for clinician in clinicians %}
-                <p>{{clinician.name}}</p>
-                <p>{{clinician.discipline}}</p>
-            {% endfor %}
-        </div>
+        
     </div>
 </div>
 {% endblock %}
