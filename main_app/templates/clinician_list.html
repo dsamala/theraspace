@@ -13,7 +13,7 @@
         <form>
             <input type="checkbox" name="checkclinicians">
             <label for="checkclinicians">Clinicians w/o Patients</label>
-            <input type="submit" value="OK"/>
+            <input type="submit" value="Filter List"/>
         </form>
         <a href="/patients">Patients</a>
         <a href="/clinicians">Clinicians</a>
@@ -26,8 +26,7 @@
         <div class="clinician-list">
             <h1>Clinician List</h1>
             {% for clinician in clinicians %}
-                <a href="{% url 'clinician_detail' clinician.pk %}">{{clinician.name}}</a>
-                <p>{{clinician.discpiline}}</p>
+                <a href="{% url 'clinician_detail' clinician.pk %}">{{clinician.name}}, {{clinician.discipline}}</a>
             {% endfor %}
         </div>
         
