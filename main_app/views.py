@@ -68,20 +68,17 @@ class PatientList(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         name = self.request.GET.get("name")
+        checkpatients = self.request.GET.get("checkpatients")
         if name != None:
             context["patients"] = Patient.objects.filter(Q(lastname__icontains=name) | Q(firstname__icontains=name))
             print(context)
         else:
             context["patients"] = Patient.objects.all()
-        return context
-    def patientfilter(self, request):
-        checkpatients = self.request.GET.get("checkpatients")
-        if checkpatients != None:
-            patients = Patient.objects.select_related('patient').filter(patient_clinician='')
-            return patients
-        else: 
-            print('No patients found without clinicians')
 
+        if checkpatients:
+             context["patients"] = Patient.objects.filter(clinician__isnull=True)
+             print(context)
+        return context
 
 class Patient_New(CreateView):
     model = Patient
