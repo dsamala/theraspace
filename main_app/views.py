@@ -71,13 +71,10 @@ class PatientList(TemplateView):
         checkpatients = self.request.GET.get("checkpatients")
         if name != None:
             context["patients"] = Patient.objects.filter(Q(lastname__icontains=name) | Q(firstname__icontains=name))
-            print(context)
         else:
             context["patients"] = Patient.objects.all()
-
         if checkpatients:
              context["patients"] = Patient.objects.filter(clinician__isnull=True)
-             print(context)
         return context
 
 class Patient_New(CreateView):
@@ -107,7 +104,14 @@ class ClinicianList(TemplateView):
     template_name = 'clinician_list.html'
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["clinicians"] = Clinician.objects.all()
+        name = self.request.GET.get("name")
+        checkclinicians = self.request.GET.get("checkclinicians")
+        if name != None:
+            context["clinicians"] = Clinician.objects.filter(Q(name__icontains=name))
+        else:
+            context["clinicians"] = Clinician.objects.all()
+        if checkclinicians:
+            context["clinicians"] = Clinician.objects.filter(patient__isnull=True)
         return context
 
 class Clinician_New(CreateView):
