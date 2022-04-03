@@ -6,6 +6,15 @@
     <div class="side-nav">
         <a href="/"><h1>Theraspace</h1></a>
         <h2>Menu</h2>
+        <form>
+            <input type="text" name="name" placeholder="Search for patient"/>
+            <input type="submit" value="Search" />
+        </form>
+        <form>
+            <input type="checkbox" name="checkpatients">
+            <label for="checkpatients">Patients w/o Clinicians</label>
+            <input type="submit" value="Filter List"/>
+        </form>
         <a href="/patients">Patients</a>
         <a href="/clinicians">Clinicians</a>
         <a href="/patient/new">Add Patient</a>
@@ -17,7 +26,7 @@
         <div class="patient-list">
             <h1>Patient List</h1>
             {% for patient in patients %}
-                <a href="{% url 'patient_detail' patient.pk %}">{{patient.firstname}}</a>
+                <a href="{% url 'patient_detail' patient.pk %}">{{patient.lastname}}, {{patient.firstname}}</a>
                 <p>{{patient.age}}</p>
                 <p>{{patient.diagnosis}}</p>
             {% endfor %}

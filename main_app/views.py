@@ -1,11 +1,10 @@
-import re
 from django.shortcuts import render
 from django.views.generic.base import TemplateView
 from django.views.generic import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse
-from django import forms
+from django.db.models import Q
 from .forms import CreatePatientForm, UpdatePatientForm
 from django.contrib.auth.models import User
 from main_app.forms import UpdatePatientForm
@@ -68,7 +67,14 @@ class PatientList(TemplateView):
     template_name = 'patient_list.html'
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["patients"] = Patient.objects.all()
+        name = self.request.GET.get("name")
+        checkpatients = self.request.GET.get("checkpatients")
+        if name != None:
+            context["patients"] = Patient.objects.filter(Q(lastname__icontains=name) | Q(firstname__icontains=name))
+        else:
+            context["patients"] = Patient.objects.all()
+        if checkpatients:
+             context["patients"] = Patient.objects.filter(clinician__isnull=True)
         return context
 
 class Patient_New(CreateView):
@@ -98,7 +104,14 @@ class ClinicianList(TemplateView):
     template_name = 'clinician_list.html'
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["clinicians"] = Clinician.objects.all()
+        name = self.request.GET.get("name")
+        checkclinicians = self.request.GET.get("checkclinicians")
+        if name != None:
+            context["clinicians"] = Clinician.objects.filter(Q(name__icontains=name))
+        else:
+            context["clinicians"] = Clinician.objects.all()
+        if checkclinicians:
+            context["clinicians"] = Clinician.objects.filter(patient__isnull=True)
         return context
 
 class Clinician_New(CreateView):

@@ -15,7 +15,7 @@ class CreatePatientForm(forms.ModelForm):
     address = forms.CharField()
     zip = forms.IntegerField()
     diagnosis = forms.CharField()
-    clinician = forms.ModelMultipleChoiceField(queryset=Clinician.objects.all(), widget=forms.CheckboxSelectMultiple)
+    clinician = forms.ModelMultipleChoiceField(required=False, queryset=Clinician.objects.all(), widget=forms.CheckboxSelectMultiple)
 
 
 
