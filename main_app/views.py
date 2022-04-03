@@ -1,11 +1,10 @@
-import re
 from django.shortcuts import render
 from django.views.generic.base import TemplateView
 from django.views.generic import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse
-from django import forms
+from django.db.models import Q
 from .forms import CreatePatientForm, UpdatePatientForm
 from django.contrib.auth.models import User
 from main_app.forms import UpdatePatientForm
@@ -68,8 +67,21 @@ class PatientList(TemplateView):
     template_name = 'patient_list.html'
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["patients"] = Patient.objects.all()
+        name = self.request.GET.get("name")
+        if name != None:
+            context["patients"] = Patient.objects.filter(Q(lastname__icontains=name) | Q(firstname__icontains=name))
+            print(context)
+        else:
+            context["patients"] = Patient.objects.all()
         return context
+    def patientfilter(self, request):
+        checkpatients = self.request.GET.get("checkpatients")
+        if checkpatients != None:
+            patients = Patient.objects.select_related('patient').filter(patient_clinician='')
+            return patients
+        else: 
+            print('No patients found without clinicians')
+
 
 class Patient_New(CreateView):
     model = Patient

@@ -34,7 +34,7 @@ class Patient(models.Model):
     date_created = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)
     diagnosis = models.CharField(max_length=150)
-    clinician = models.ManyToManyField(Clinician)
+    clinician = models.ManyToManyField(Clinician, null=True)
 
     def __str__(self):
         return self.lastname
