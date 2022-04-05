@@ -2,28 +2,30 @@
 {% block content %}
 <div class="container">
     <div class="sign-in-container">
+        <div>
         <h1 class="sign-in-header">Sign in</h1>
-
+        </div>
         {% if form.non_field_errors %}
         <ul>
-            {% for error in form.non_field_errors %}
+        {% for error in form.non_field_errors %}
         {% endfor %}
         </ul>
         {% endif %}
 
         {{form.errors}}
-
+        <div class="form-container">
         <form method="POST">
             {% csrf_token %}
             {{form.username}}
             {{form.password}}
-            <input type="submit" value="Submit" />
+            <input class="sign-in-btn" type="submit" value="Sign In" />
         </form>
+        </div>  
     </div>
   
     <div class="sign-in-overlay">
         <h1 class="sign-in-header">Welcome To Theraspace</h1>
-        <p>Please enter your credentials</p>
+        <p>Enter your details and start your journey with us</p>
         <a href="/signup">Sign Up</a>
     </div>
 

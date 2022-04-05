@@ -13,6 +13,18 @@ a {
     color: black;
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+}
+/* 
+input{
+    border: none;
+    padding: 12px 15px;
+    margin: 8px 0;
+    width: 100%;
+} */
+
 :root{
     --teal: #4EDBC1;
     --gray: #808080;
@@ -37,7 +49,8 @@ a {
     width: 700px;
     max-width: 100%;
     min-height: 480px;
-    border: 5px solid green;
+    background-color: white;
+    border-radius: 15px 0 0 15px;
 }
 
 .sign-in-overlay{
@@ -49,14 +62,62 @@ a {
     width: 700px;
     max-width: 100%;
     min-height: 480px;
-    border: 5px solid brown;
+    background-color: #4EDBC1;
+    color: white;
+    
+    border-radius: 0px 15px 15px 0px;
 }
 
 .sign-in-header{
     font-size: 45px;
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 15%;
 }
 
+.form-container input[type="text"]{
+    border: solid 1px gray;
+    background-color: white;
+    padding: 12px 15px;
+    margin: 8px 0;
+    width: 100%;
+}
+
+.form-container input[type="password"]{
+    border: solid 1px gray;
+    background-color: white;
+    padding: 12px 15px;
+    margin: 8px 0;
+    width: 100%;
+}
+
+.form-container text{
+    float: left;
+}
+
+.form-container input:focus{
+    outline: none;
+  	border: 1px solid #4EDBC1;
+}
+
+.sign-in-btn{
+    border-radius: 15px;
+    border: none;
+    padding: 12px 45px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background-color: #808080;
+    color: white;
+}
+
+
 /* Home */
+
+.logo-title{
+    font-style: bold;
+    font-size: 35px;
+}
+
 .home-container{
     display: flex;
     flex-direction: row;
