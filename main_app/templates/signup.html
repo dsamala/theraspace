@@ -15,14 +15,14 @@
 <div class="sign-in-container">
     <h1 class="sign-in-header">Welcome Back</h1>
     <p>To keep connected, please login with your information</p>
-    <a href="/login">Log In</a>
+    <a class="btn" href="/login">Log In</a>
 </div>
 
 
 
 {{form.errors}}
 <div class="sign-in-overlay">
-    <h1 class="sign-in-header">Sign in</h1>
+    <h1 class="sign-in-header">Sign Up</h1>
 
     {% if form.non_field_errors %}
     <ul>
@@ -34,13 +34,13 @@
     <form method="POST">
     {% csrf_token %}
 
-    {{ form.username.label_tag }}
-    {{form.username}}
-    {{ form.password1.label_tag }}
-    {{form.password1}}
-    {{ form.password2.label_tag }}
-    {{form.password2}}
-    <input type="submit" value="Sign Up" />
+  
+    <label for="password">Username</label> {{form.username}}
+    
+    <label for="password">Password</label>{{form.password1}}
+    
+    <label for="password">Verify Password</label>{{form.password2}}
+    <input class="btn" type="submit" value="Sign Up" />
     </form>
 </div>
 

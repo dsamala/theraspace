@@ -16,17 +16,17 @@
         <div class="form-container">
         <form method="POST">
             {% csrf_token %}
-            {{form.username}}
-            {{form.password}}
-            <input class="sign-in-btn" type="submit" value="Sign In" />
+            <label for="username">Username</label>{{form.username}}
+            <label for="password">Password</label>{{form.password}}
+            <input class="btn" type="submit" value="Sign In" />
         </form>
         </div>  
     </div>
   
     <div class="sign-in-overlay">
         <h1 class="sign-in-header">Welcome To Theraspace</h1>
-        <p>Enter your details and start your journey with us</p>
-        <a href="/signup">Sign Up</a>
+        <p class="sub-header">Enter your details and start your journey with us</p>
+        <a class="btn" href="/signup">Sign Up</a>
     </div>
 
 </div>  
