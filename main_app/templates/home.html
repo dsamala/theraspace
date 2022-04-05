@@ -4,34 +4,36 @@
 <div class="home-container">
 
     <div class="side-nav">
-        <a href="/"><h1 class="logo-title">Theraspace</h1></a>
+        <a class="homelink" href="/"><h1 class="logo-title">Theraspace</h1></a>
         <h2>Menu</h2>
-        <a href="/patients">Patients</a>
-        <a href="/clinicians">Clinicians</a>
-        <a href="patients/new">Add Patient</a>
-        <a href="clinician/new">Add Clinician</a>
-
+        <a class="homelink" href="/patients">Patients</a>
+        <a class="homelink" href="/clinicians">Clinicians</a>
+        <a class="homelink" href="patients/new">Add Patient</a>
+        <a class="homelink" href="clinician/new">Add Clinician</a>
     </div>
 
     <div class="list-container">
        
         <div class="patient-list">
-            <h1>Patient List</h1>
+            <h1 class="list-header">Patients</h1>
             {% for patient in patients %}
                 <p>{{patient.firstname}}</p>
                 <p>{{patient.age}}</p>
             {% endfor %}
         </div>
 
-
-
         <div class="clinician-list">
-            <h1>Clinician List</h1>
+            <h1 class="list-header">Clinicians</h1>
             {%for clinician in clinicians %}
                 <p>{{clinician.name}}</p>
                 <p>{{clinician.discipline}}</p>
             {% endfor %}
         </div>
     </div>
+    <div class="top-nav">
+        <a class="homelink" href="/logout">Log Out</a>
+        
+    </div>
+
 </div>
 {% endblock %}
