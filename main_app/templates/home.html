@@ -15,23 +15,43 @@
     <div class="list-container">
        
         <div class="patient-list">
+            <table class="patient-table">
             <h1 class="list-header">Patients</h1>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Age</th>
+                </tr>
             {% for patient in patients %}
-                <p>{{patient.firstname}}</p>
-                <p>{{patient.age}}</p>
+                <tr>
+                    <td>{{patient.firstname}}</td>
+                    <td>{{patient.lastname}}</td>
+                    <td>{{patient.age}}</td>
+                </tr>
             {% endfor %}
+               
+            </table>
         </div>
 
         <div class="clinician-list">
-            <h1 class="list-header">Clinicians</h1>
+            
+            <table class="clinician-table">
+                <h1 class="list-header">Clinicians</h1>
+                <tr>
+                    <th>Name</th>
+                    <th>Discipline</th>
+                </tr>
             {%for clinician in clinicians %}
-                <p>{{clinician.name}}</p>
-                <p>{{clinician.discipline}}</p>
+                <tr>
+                    <td>{{clinician.name}}</td>
+                    <td>{{clinician.discipline}}</td>
+                </tr>
             {% endfor %}
+            </table>
         </div>
     </div>
     <div class="top-nav">
-        <a class="homelink" href="/logout">Log Out</a>
+        <a class="homelink" href="/logout"><img src="{% static '../static/images/logout.png' %}"></img> Log Out</a>
         
     </div>
 

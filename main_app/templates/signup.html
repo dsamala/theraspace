@@ -24,24 +24,22 @@
 <div class="sign-in-overlay">
     <h1 class="sign-in-header">Sign Up</h1>
 
-    {% if form.non_field_errors %}
+        {% if form.non_field_errors %}
     <ul>
         {% for error in form.non_field_errors %}
-    {% endfor %}
+        {% endfor %}
     </ul>
-    {% endif %}
+        {% endif %}
 
-    <form method="POST">
-    {% csrf_token %}
-
-  
-    <label for="password">Username</label> {{form.username}}
-    
-    <label for="password">Password</label>{{form.password1}}
-    
-    <label for="password">Verify Password</label>{{form.password2}}
-    <input class="btn" type="submit" value="Sign Up" />
-    </form>
+    <div class="form-container">
+        <form method="POST">
+        {% csrf_token %}
+            <label for="password">Username</label> {{form.username}}
+            <label for="password">Password</label>{{form.password1}}
+            <label for="password">Verify Password</label>{{form.password2}}
+            <input class="btn" type="submit" value="Sign Up" />
+        </form>
+    </div> 
 </div>
 
 </div>  
