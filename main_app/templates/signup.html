@@ -2,16 +2,6 @@
 {% block content %}
 
 <div class="container">
-    
-    {% if form.non_field_errors %}
-    <ul>
-        {% for error in form.non_field_errors %}
-    {% endfor %}
-    </ul>
-    {% endif %}
-
-    {{form.errors}}
-
 <div class="sign-in-container">
     <h1 class="sign-in-header">Welcome Back</h1>
     <p>To keep connected, please login with your information</p>
@@ -19,18 +9,8 @@
 </div>
 
 
-
-{{form.errors}}
 <div class="sign-in-overlay">
     <h1 class="sign-in-header">Sign Up</h1>
-
-        {% if form.non_field_errors %}
-    <ul>
-        {% for error in form.non_field_errors %}
-        {% endfor %}
-    </ul>
-        {% endif %}
-
     <div class="form-container">
         <form method="POST">
         {% csrf_token %}
@@ -39,7 +19,12 @@
             <label for="password">Verify Password</label>{{form.password2}}
             <input class="btn" type="submit" value="Sign Up" />
         </form>
-    </div> 
+    </div>
+    {% if form.errors %}
+        <div class="error-div">
+            <p>{{form.errors}}</p>
+        </div>   
+    {% endif %}
 </div>
 
 </div>  

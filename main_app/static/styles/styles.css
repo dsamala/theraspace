@@ -18,10 +18,27 @@ form {
     flex-direction: column;
 }
 
+.error-div{
+    background-color: white;
+    position:relative;
+    margin: auto;
+    width: 150px;
+    height: 150px;
+}
+
+.errorlist{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    height: 150px;
+    color: red;
+}
+
 
 :root{
-    --teal: #4EDBC1;
-    --gray: #808080;
+    --teal: #00AEAE;
+    --gray: #979797;
     --white: #FFFFFF;
 }
 
@@ -56,7 +73,7 @@ form {
     width: 700px;
     max-width: 100%;
     min-height: 480px;
-    background-color: #4EDBC1;
+    background-color: var(--teal);
     color: white;
     border-radius: 0px 15px 15px 0px;
 }
@@ -111,6 +128,7 @@ form {
 .logo-title{
     font-style: bold;
     font-size: 35px;
+    justify-content: center;
 }
 
 .home-container{
@@ -164,10 +182,12 @@ form {
 .list-header{
     text-align: center;
     margin-top: 5px;
+
 }
 
 .patient-list{
-    border: 3px solid black;
+    border: 1px solid black;
+    border-radius: 5px;
     background-color:var(--gray);
     margin: 0px 50px 50px 25px;
     width: 100em;
@@ -194,7 +214,8 @@ form {
 }
 
 .clinician-list{
-    border: 3px solid black;
+    border: 1px solid black;
+    border-radius: 5px;
     background-color: var(--gray);
     margin: 0px 50px 50px 25px;
     width: 100em;

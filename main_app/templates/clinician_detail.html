@@ -4,7 +4,7 @@
 <div class="home-container">
 
     <div class="side-nav">
-        <a href="/"><h1>Theraspace</h1></a>
+        <div><a class="homelink" href="/"><h1 class="logo-title">Theraspace</h1></a></div>
         <h2>Menu</h2>
         <a href="/patients">Patients</a>
         <a href="/clinicians">Clinicians</a>
@@ -32,6 +32,10 @@
             <a href="{% url 'clinician_delete' clinician.pk %}">Delete</a>
         </div>
 
+    </div>
+    <div class="top-nav">
+        <a class="homelink" href="/logout"><img src="{% static '../static/images/logout.png' %}"></img> Log Out</a>
+        
     </div>
 </div>
 {% endblock %}
