@@ -6,14 +6,16 @@
     <div class="side-nav">
         <div><a class="homelink" href="/"><h1 class="logo-title">Theraspace</h1></a></div>
         <h2>Menu</h2>
-        <form>
-            <input type="text" name="name" placeholder="Search for clinician"/>
-            <input type="submit" value="Search" />
+        <form class="search-box">
+            <input class="input-search"  type="text" name="name" placeholder="Search for clinician"/>
+            <input class="btn-search" type="submit" value="Search" />
         </form>
         <form>
-            <input type="checkbox" name="checkclinicians">
-            <label for="checkclinicians">Clinicians w/o Patients</label>
-            <input type="submit" value="Filter List"/>
+            <div class="switch">
+                <input class="switch-input" id="switch-1" type="checkbox" name="checkclinicians">
+                <label class="switch-label" for="switch-1"></label>
+                <input class="switch-btn" type="submit" value="Filter"/>
+            </div>
         </form>
         <a href="/patients">Patients</a>
         <a href="/clinicians">Clinicians</a>
@@ -22,12 +24,21 @@
     </div>
 
     <div class="list-container">
-       
         <div class="clinician-list">
-            <h1>Clinician List</h1>
-            {% for clinician in clinicians %}
-                <a href="{% url 'clinician_detail' clinician.pk %}">{{clinician.name}}, {{clinician.discipline}}</a>
-            {% endfor %}
+            <table class="patient-table">
+                <h1 class="list-header">Clinician List</h1>
+                <tr>
+                    <th>Name</th>
+                    <th>Discipline</th>
+                </tr>
+                {% for clinician in clinicians %}
+                <tr>
+                    <td>{{clinician.name}}</td>
+                    <td>{{clinician.discipline}}</td>
+                </tr>
+                   
+                {% endfor %}
+            </table>
         </div>
         
     </div>
