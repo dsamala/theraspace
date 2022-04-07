@@ -36,16 +36,12 @@ def login_view(request):
                     login(request, user)
                     return HttpResponseRedirect('/')
                 else:
-                    print('username had incorrect password')
                     return render(request, 'login.html', {'form': form})
             else:
-                print('no username no password found')
                 return render(request, 'signup.html', {'form': form})
         else: 
-            print('form is invalid')
             return render(request, 'login.html', {'form': form})
     else:
-        print('request is not a POST')
         form = AuthenticationForm()
         return render(request, 'login.html', {'form': form})        
 
@@ -69,6 +65,7 @@ def signup_view(request):
         form = UserCreationForm()
         return render(request, 'signup.html', {'form': form})
 
+@method_decorator(login_required, name='dispatch')
 class PatientList(TemplateView):
     template_name = 'patient_list.html'
     def get_context_data(self, **kwargs):
@@ -83,12 +80,14 @@ class PatientList(TemplateView):
             context["patients"] = Patient.objects.filter(clinician__isnull=True)
         return context
 
+@method_decorator(login_required, name='dispatch')
 class Patient_New(CreateView):
     model = Patient
     form_class = CreatePatientForm
     template_name = "patient_new.html"
     success_url = '/patients'
 
+@method_decorator(login_required, name='dispatch')
 class PatientDetail(DetailView):
     model = Patient
     template_name = 'patient_detail.html'

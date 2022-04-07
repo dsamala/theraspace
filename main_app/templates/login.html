@@ -14,11 +14,12 @@
             <input class="btn" type="submit" value="Sign In" />
         </form>
         </div>
-        {% if form.errors %}
+
+            {% if form.errors %}
         <div>
-            <h1></h1>{{form.errors}}</p>
+                <p>Please check your login details.</p>
         </div>   
-        {% endif %}
+            {% endif %}
     </div>
   
     <div class="sign-in-overlay">

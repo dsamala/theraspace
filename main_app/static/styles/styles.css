@@ -19,7 +19,7 @@ form {
 }
 
 .error-div{
-    background-color: white;
+    background-color: transparent;
     position:relative;
     margin: auto;
     width: 150px;
@@ -151,7 +151,7 @@ form {
     flex-direction: column;
     top: 0;
     left: 0;
-    width: 225px;
+    width: 235px;
     height: 100vh;
     max-height: 100%;
     padding: 20px;
@@ -179,6 +179,17 @@ form {
     color: white;
 }
 
+.btn-search{
+    border-radius: 15px;
+    border: none;
+    padding: 1px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background-color: #808080;
+    color: white;
+}
+
 .list-header{
     text-align: center;
     margin-top: 5px;
@@ -200,19 +211,103 @@ form {
     margin: 25px 0;
     font-size: 0.9em;
     font-family: sans-serif;
-    min-width: 400px;
+    min-width: 100%;
 }
 
 .patient-table th{
     background-color: var(--teal);
     color: var(--white);
     text-align: left;
+    max-width: 100%;
 }
+
 
 .patient-table th, td{
     padding: 12px 15px;
 }
 
+.search-box{
+   display: flex;
+   flex-direction: row;
+}
+
+.search-box input{
+    border: 1px solid black;
+    border-radius: 3.5px;
+    height: 25px;
+}
+
+.search-box input:focus{
+    outline: none;
+    border: 1px solid #4EDBC1;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+}
+
+.switch-input {
+    display: none;
+  }
+
+.switch-label {
+    display: block;
+    width: 48px;
+    height: 24px;
+    text-indent: -150%;
+    clip: rect(0 0 0 0);
+    color: transparent;
+    user-select: none;
+}
+.switch-label::before,
+.switch-label::after {
+    content: "";
+    display: block;
+    position: absolute;
+    cursor: pointer;
+}
+.switch-label::before {
+    margin: auto;
+    width: 25%;
+    height: 50%;
+    background-color: #dedede;
+    border-radius: 9999em;
+    -webkit-transition: background-color 0.25s ease;
+    transition: background-color 0.25s ease;
+}
+.switch-label::after {
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.45);
+    -webkit-transition: left 0.25s ease;
+    transition: left 0.25s ease;
+  }
+.switch-input:checked + .switch-label::before {
+    background-color: var(--gray);
+  }
+.switch-input:checked + .switch-label::after {
+    left: 24px;
+  }
+
+.switch-btn{
+    border-radius: 15px;
+    border: 1px solid black;
+    
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background-color: #808080;
+    color: white;
+    margin-top: 5%;
+    min-width: 100%;
+    min-height: 40%;
+}
+  
 .clinician-list{
     border: 1px solid black;
     border-radius: 5px;
