@@ -13,26 +13,30 @@
     <div class="list-container">
        
         <div class="patient-list">
-            <h1>Patient Details</h1>
-                <p>{{patient.lastname}}</p>
-                <p>{{patient.firstname}}</p>
-                <p>{{patient.age}}</p>
-                <p>{{patient.address}}</p>
-                <p>{{patient.zip}}</p>
-                <p>{{patient.diagnosis}}</p>
-                <p>{{patient.date_created}}</p>
-                <p>{{patient.date_updated}}</p>
-                
+            <h1 class="list-header">Patient Details</h1>
+            <div class="record-info">
+                <h1>{{patient.lastname}}, {{patient.firstname}}</h1>
+                <h3>Age: {{patient.age}}</h3>
+                <p>Address: {{patient.address}}</p>
+                <p>Zip: {{patient.zip}}</p>
+                <p>Diagnosis: {{patient.diagnosis}}</p>
+                <p>Record Created: {{patient.date_created}}</p>
+                <p>Record Updated: {{patient.date_updated}}</p>
                 {% for clinician in patient.clinician.all %}
+                <h3>Assigned Clinician/s:</h3>
                 <p>{{clinician.name}}</p>
                 <p>{{clinician.discipline}}</p>
+                {% empty %}
+                <p>Patient has no assigned   clinicians.</p>
                 {% endfor %}
+            </div>
+            <div class="patient-actions">
+                <a class="homelink" href="{% url 'patient_update' patient.pk %}">Update</a>
+                <a class="homelink" href="{% url 'patient_delete' patient.pk %}">Delete</a>
+            </div>
         </div>
         
-        <div class="patient-actions">
-            <a class="homelink" href="{% url 'patient_update' patient.pk %}">Update</a>
-            <a class="homelink" href="{% url 'patient_delete' patient.pk %}">Delete</a>
-        </div>
+   
 
     </div>
     <div class="top-nav">

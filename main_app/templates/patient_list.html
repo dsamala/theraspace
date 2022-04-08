@@ -36,15 +36,15 @@
                         <th>Diagnosis</th>
                     </tr>
                 {% for patient in patients %}
+            
                     <tr>
-                        
-                        <td>{{patient.firstname}}</td>
+                        <td><a href="{% url 'patient_detail' patient.pk %}">{{patient.firstname}}</a></td>
                         <td>{{patient.lastname}}</td>
                         <td>{{patient.age}}</td>
                         <td>{{patient.gender}}</td>
-                        <td>{{patient.diagnosis}}</td>
-                
+                        <td>{{patient.diagnosis}}</a></td>
                     </tr>
+                
                 {% endfor %}
             </table>
         </div>

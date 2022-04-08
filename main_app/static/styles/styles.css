@@ -226,6 +226,8 @@ a {
     font-size: 0.9em;
     font-family: sans-serif;
     min-width: 100%;
+    justify-content: center;
+    border-collapse: collapse;
 }
 
 .patient-table th{
@@ -236,11 +238,24 @@ a {
     text-transform: uppercase;
 }
 
-
 .patient-table th, td{
     padding: 12px 15px;
     font-weight: 300;
 }
+
+.patient-table tr:hover, tr:focus-within{
+    background-color: var(--white);
+    outline: none;
+    cursor: pointer;    
+}
+
+.patient-table td > a:first-child{
+    padding: 0;
+    text-decoration: none;
+    color: black;
+    z-index: 0;
+}
+
 
 .search-box{
    display: flex;
@@ -469,7 +484,16 @@ a {
     width: 45%;
 }
 
-
+.record-info {
+    border: 1px solid black;
+    border-radius: 4px;
+    display: flex;
+    padding: 5px;
+    margin: 3px;
+    flex-wrap: wrap;
+    flex-direction: column;
+    max-height: 100%;
+}
 
 
 
