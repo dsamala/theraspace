@@ -13,11 +13,6 @@ a {
     color: black;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-}
-
 .error-div{
     background-color: transparent;
     position:relative;
@@ -82,6 +77,11 @@ form {
     font-size: 45px;
     font-family: 'Open Sans', sans-serif;
     margin-bottom: 2%
+}
+
+.form-container form{
+    display: flex !important;
+    flex-direction: column !important;
 }
 
 .form-container input[type="text"]{
@@ -152,7 +152,7 @@ form {
     top: 0;
     left: 0;
     width: 235px;
-    height: 100vh;
+    height: 125vh;
     max-height: 100%;
     padding: 20px;
     background-color: var(--teal);
@@ -335,3 +335,92 @@ form {
 .clinician-table th, td{
     padding: 12px 15px;
 }
+
+.record-container{
+    border: 1px black solid;
+    border-radius: 5px;
+    padding: 25px;
+    width: 500em;
+    max-width: 100%;
+    margin: 25px;
+    background-color: var(--white);
+}
+
+.patient-record form{
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column; 
+    background-color: var(--white);
+    margin: 15px;
+}
+
+
+.patient-record input:focus{
+    outline: none;
+    border: 1px solid var(--teal);
+}
+
+.patient-record input[name="firstname"], input[name="lastname"]{
+    border: solid 1px gray;
+    background-color: white;
+    padding: 12px 15px;
+    margin: 8px 0;
+    width: 45%;
+}
+
+.patient-record input[name="age"]{
+    border: solid 1px gray;
+    background-color: white;
+    padding: 12px 15px;
+    margin: 8px 0;
+    width: 5em;
+    height: 2em;
+}
+
+.patient-record select[name="gender"], input[name="zip"]{
+    border: solid 1px gray;
+    background-color: white;
+    font-size: 15px;
+    padding: 12px 15px;
+    margin: 8px 0;
+    width: 17%;
+
+}
+
+.patient-record input[name="address"], input[name="diagnosis"]{
+    border: solid 1px gray;
+    background-color: white;
+    padding: 12px 15px;
+    margin: 8px 0;
+    height: 50px;
+    width: 65%;
+}
+
+.patient-record label{
+    border: none;
+    padding: 5px;
+    font-size: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: Black;
+}
+
+.form-btn{
+    border-radius: 15px;
+    border: none;
+    padding: 12px 45px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background-color: #808080;
+    color: white;
+    margin-top: 5%;
+    width: 25%;
+}
+
+
+
+
+
+
