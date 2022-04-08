@@ -151,7 +151,7 @@ a {
     flex-direction: column;
     top: 0;
     left: 0;
-    width: 235px;
+    width: 245px;
     height: 125vh;
     max-height: 100%;
     padding: 20px;
@@ -171,8 +171,20 @@ a {
     font-size: 17px;
 }
 
+.logolink{
+    padding: .5rem;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: Black;
+}
+
 .homelink{
     padding: .5rem;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: Black;
 }
 
 .homelink:hover{
@@ -192,8 +204,10 @@ a {
 
 .list-header{
     text-align: center;
-    margin-top: 5px;
-
+    margin-top: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 200;
 }
 
 .patient-list{
@@ -219,11 +233,13 @@ a {
     color: var(--white);
     text-align: left;
     max-width: 100%;
+    text-transform: uppercase;
 }
 
 
 .patient-table th, td{
     padding: 12px 15px;
+    font-weight: 300;
 }
 
 .search-box{
@@ -269,7 +285,7 @@ a {
 }
 .switch-label::before {
     margin: auto;
-    width: 25%;
+    width: 50px;
     height: 50%;
     background-color: #dedede;
     border-radius: 9999em;
@@ -297,7 +313,6 @@ a {
 .switch-btn{
     border-radius: 15px;
     border: 1px solid black;
-    
     font-size: 12px;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -419,6 +434,40 @@ a {
     width: 25%;
 }
 
+.clinician-record form{
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column; 
+    background-color: var(--white);
+    margin: 15px;
+}
+
+.clinician-record label{
+    border: none;
+    padding: 5px;
+    font-size: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: Black;
+}
+
+.clinician-record input[name="name"]{
+    border: solid 1px gray;
+    background-color: white;
+    padding: 12px 15px;
+    margin: 8px 0;
+    width: 45%;
+}
+
+
+.clinician-record select[name="discipline"]{
+    border: solid 1px gray;
+    background-color: white;
+    padding: 12px 15px;
+    margin: 8px 0;
+    width: 45%;
+}
 
 
 

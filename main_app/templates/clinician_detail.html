@@ -4,11 +4,11 @@
 <div class="home-container">
 
     <div class="side-nav">
-        <div><a class="homelink" href="/"><h1 class="logo-title">Theraspace</h1></a></div>
+        <div><a class="logolink" href="/"><h1 class="logo-title">Theraspace</h1></a></div>
         <h2>Menu</h2>
-        <a href="/patients">Patients</a>
-        <a href="/clinicians">Clinicians</a>
-        <a href="/clinicians/new">Add Clinician</a>
+        <a class="homelink" href="/patients">Patients</a>
+        <a class="homelink" href="/clinicians">Clinicians</a>
+        <a class="homelink" href="/clinicians/new">Add Clinician</a>
     </div>
 
     <div class="list-container">
@@ -28,8 +28,8 @@
         </div>
         
         <div class="clinician-actions">
-            <a href="{% url 'clinician_update' clinician.pk %}">Update</a>
-            <a href="{% url 'clinician_delete' clinician.pk %}">Delete</a>
+            <a class="homelink" href="{% url 'clinician_update' clinician.pk %}">Update</a>
+            <a class="homelink" href="{% url 'clinician_delete' clinician.pk %}">Delete</a>
         </div>
 
     </div>
