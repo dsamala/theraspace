@@ -10,15 +10,14 @@
 
     </div>
 
-    <div class="form-container">
-       
-        <div class="clinician-record">
+    <div class="record-container">
+        <div>
             <h1>Delete Clinician Record?</h1>
             <form method="POST">
                 {% csrf_token %}
                 {{form}}
-                <input type="submit" value="Submit"/>
-                <a href="{% url 'clinician_detail' clinician.pk %}">Cancel</a>
+                <input class="delete-btn" type="submit" value="Delete"/>
+                <a class="form-btn" href="{% url 'clinician_detail' clinician.pk %}">Cancel</a>
             </form>
         </div>
         

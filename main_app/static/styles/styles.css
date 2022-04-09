@@ -487,12 +487,12 @@ a {
 }
 
 .key-header{
-    text-align: center;
+    text-align: left;
     margin-top: 25px;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: 200;
-    font-size: 15p
+    font-size: 45px;
 }
 
 .assigned-key{
@@ -507,14 +507,32 @@ a {
 .sub-heading{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    text-align: left;
+    padding: 0px 20px 0px 0px;
+}
+
+
+.sub-heading h3{
+    font-size: 25px;
 }
 
 .record-modified{
     display: flex;
     flex-direction: column;
-    font-size: 12px;
-    margin-top: 2%;
+    font-size: 17px;
+    margin-top: 6%;
+}
 
+.delete-btn{
+    border-radius: 15px;
+    border: none;
+    padding: 12px 45px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background-color: #ff6781;
+    color: white;
+    margin-top: 5%;
+    width: 20%;
 }
 

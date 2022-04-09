@@ -32,7 +32,7 @@
                 </tr>
                 {% for clinician in clinicians %}
                 <tr>
-                    <td>{{clinician.name}}</td>
+                    <td><a href="{% url 'clinician_detail' clinician.pk %}">{{clinician.name}}</a></td>
                     <td>{{clinician.discipline}}</td>
                 </tr>
                    
