@@ -30,6 +30,6 @@ class UpdatePatientForm(forms.ModelForm):
     age = forms.IntegerField(min_value=1, max_value=100,validators=[MaxValueValidator(100), MinValueValidator(1)])
     gender = forms.ChoiceField(choices=GENDER_CHOICES)
     address = forms.CharField(max_length=500)
-    zip = forms.IntegerField(min_value=11111, max_value=99999)
+    zip = forms.IntegerField(min_value=00000, max_value=99999)
     diagnosis = forms.CharField(max_length=150)
     clinician = forms.ModelMultipleChoiceField(queryset=Clinician.objects.all(), widget=forms.CheckboxSelectMultiple, required=False)

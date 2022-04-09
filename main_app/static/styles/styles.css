@@ -131,6 +131,12 @@ a {
     justify-content: center;
 }
 
+.icon{
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+}
+
 .home-container{
     display: flex;
     flex-direction: row;
@@ -215,7 +221,7 @@ a {
     border-radius: 5px;
     background-color:var(--gray);
     margin: 0px 50px 50px 25px;
-    width: 100em;
+    width: 100rem;
     max-width: 100vw;
     height: 85vh;
 }
@@ -334,8 +340,7 @@ a {
     background-color: #808080;
     color: white;
     margin-top: 5%;
-    min-width: 100%;
-    min-height: 40%;
+    width: 100px;
 }
   
 .clinician-list{
@@ -348,23 +353,6 @@ a {
     height: 85vh;
 }
 
-.clinician-table {
-    border-collapse: collapse;
-    margin: 25px 0;
-    font-size: 0.9em;
-    font-family: sans-serif;
-    min-width: 400px
-}
-
-.clinician-table th{
-    background-color: var(--teal);
-    color: var(--white);
-    text-align: left;
-}
-
-.clinician-table th, td{
-    padding: 12px 15px;
-}
 
 .record-container{
     border: 1px black solid;
@@ -484,16 +472,49 @@ a {
     width: 45%;
 }
 
+
 .record-info {
-    border: 1px solid black;
-    border-radius: 4px;
     display: flex;
-    padding: 5px;
-    margin: 3px;
+    margin: 10px;
     flex-wrap: wrap;
     flex-direction: column;
     max-height: 100%;
 }
 
+.record-info h3, h4{
+    color: var(--gray);
+    padding: 5px;
+}
 
+.key-header{
+    text-align: center;
+    margin-top: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 200;
+    font-size: 15p
+}
+
+.assigned-key{
+    border: 1px solid var(--gray);
+    margin: 5px;
+    padding: 3px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sub-heading{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.record-modified{
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    margin-top: 2%;
+
+}
 

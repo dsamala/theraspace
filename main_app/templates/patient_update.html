@@ -5,21 +5,22 @@
 
     <div class="side-nav">
         <div><a class="logolink" href="/"><h1 class="logo-title">Theraspace</h1></a></div>
-        <h2>Menu</h2>
-        <a class="homelink" href="/patients">Patients</a>
-        <a class="homelink" href="/clinicians">Clinicians</a>
+        <a class="homelink" href="/patients"><img class="icon" src="{% static '../static/images/record.png' %}"></img>Patients</a>
+        <a class="homelink" href="/clinicians"><img class="icon" src="{% static '../static/images/license.png' %}"></img>Clinicians</a>
 
     </div>
 
-    <div class="form-container">
+    <div class="record-container">
        
         <div class="patient-record">
-            <h1>Update Patient Record</h1>
+            <h1 class="list-header">Update Patient Record</h1>
+            <div class="patient-record">
             <form method="POST">
                 {% csrf_token %}
                 {{form}}
-                <input type="submit" value="Submit"/>
+                <input class="form-btn" type="submit" value="Submit"/>
             </form>
+            </div>
         </div>
         
     </div>
