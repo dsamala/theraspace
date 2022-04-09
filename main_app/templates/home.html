@@ -4,34 +4,52 @@
 <div class="home-container">
 
     <div class="side-nav">
-        <a class="homelink" href="/"><h1 class="logo-title">Theraspace</h1></a>
-        <h2>Menu</h2>
-        <a class="homelink" href="/patients">Patients</a>
-        <a class="homelink" href="/clinicians">Clinicians</a>
+        <div><a class="logolink" href="/"><h1 class="logo-title">Theraspace</h1></a></div>
+        <a class="homelink" href="/patients"><img class="icon" src="{% static '../static/images/record.png' %}"></img>Patients</a>
+        <a class="homelink" href="/clinicians"><img class="icon" src="{% static '../static/images/license.png' %}"></img>Clinicians</a>
         <a class="homelink" href="patients/new">Add Patient</a>
-        <a class="homelink" href="clinician/new">Add Clinician</a>
+        <a class="homelink" href="clinicians/new">Add Clinician</a>
     </div>
 
     <div class="list-container">
        
         <div class="patient-list">
+            <table class="patient-table">
             <h1 class="list-header">Patients</h1>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Age</th>
+                </tr>
             {% for patient in patients %}
-                <p>{{patient.firstname}}</p>
-                <p>{{patient.age}}</p>
+                <tr>
+                    <td>{{patient.firstname}}</td>
+                    <td>{{patient.lastname}}</td>
+                    <td>{{patient.age}}</td>
+                </tr>
             {% endfor %}
+               
+            </table>
         </div>
 
         <div class="clinician-list">
-            <h1 class="list-header">Clinicians</h1>
+            <table class="patient-table">
+                <h1 class="list-header">Clinicians</h1>
+                <tr>
+                    <th>Name</th>
+                    <th>Discipline</th>
+                </tr>
             {%for clinician in clinicians %}
-                <p>{{clinician.name}}</p>
-                <p>{{clinician.discipline}}</p>
+                <tr>
+                    <td>{{clinician.name}}</td>
+                    <td>{{clinician.discipline}}</td>
+                </tr>
             {% endfor %}
+            </table>
         </div>
     </div>
     <div class="top-nav">
-        <a class="homelink" href="/logout">Log Out</a>
+        <a class="homelink" href="/logout"><img src="{% static '../static/images/logout.png' %}"></img> Log Out</a>
         
     </div>
 

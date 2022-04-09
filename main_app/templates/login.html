@@ -5,14 +5,7 @@
         <div>
         <h1 class="sign-in-header">Sign in</h1>
         </div>
-        {% if form.non_field_errors %}
-        <ul>
-        {% for error in form.non_field_errors %}
-        {% endfor %}
-        </ul>
-        {% endif %}
 
-        {{form.errors}}
         <div class="form-container">
         <form method="POST">
             {% csrf_token %}
@@ -20,7 +13,13 @@
             <label for="password">Password</label>{{form.password}}
             <input class="btn" type="submit" value="Sign In" />
         </form>
-        </div>  
+        </div>
+
+            {% if form.errors %}
+        <div>
+                <p>Please check your login details.</p>
+        </div>   
+            {% endif %}
     </div>
   
     <div class="sign-in-overlay">

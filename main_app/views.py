@@ -22,8 +22,7 @@ class Home(TemplateView):
         context = super().get_context_data(**kwargs)
         context["patients"] = Patient.objects.all()
         context["clinicians"] = Clinician.objects.all()
-        return context
-
+        return context  
 
 def login_view(request):
     if request.method == 'POST':
@@ -37,14 +36,15 @@ def login_view(request):
                     login(request, user)
                     return HttpResponseRedirect('/')
                 else:
-                    print('The account does not exist or has been disabled.')
-                    return HttpResponseRedirect('/login')
+                    return render(request, 'login.html', {'form': form})
             else:
-                print('The username and/or password is incorrect.')
-                return HttpResponseRedirect('/login')
+                return render(request, 'signup.html', {'form': form})
+        else: 
+            return render(request, 'login.html', {'form': form})
     else:
         form = AuthenticationForm()
-        return render(request, 'login.html', {'form': form})     
+        return render(request, 'login.html', {'form': form})        
+
 
 def logout_view(request):
     logout(request)
@@ -56,13 +56,16 @@ def signup_view(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return HttpResponseRedirect('/login')
+            print('HEY', user.username)
+            return HttpResponseRedirect('/user/'+str(user))
         else:
-            HttpResponse('<h1>Please Try Again</h1>')
+            return render(request, 'signup.html', {'form': form})
+
     else:
         form = UserCreationForm()
         return render(request, 'signup.html', {'form': form})
 
+@method_decorator(login_required, name='dispatch')
 class PatientList(TemplateView):
     template_name = 'patient_list.html'
     def get_context_data(self, **kwargs):
@@ -74,15 +77,17 @@ class PatientList(TemplateView):
         else:
             context["patients"] = Patient.objects.all()
         if checkpatients:
-             context["patients"] = Patient.objects.filter(clinician__isnull=True)
+            context["patients"] = Patient.objects.filter(clinician__isnull=True)
         return context
 
+@method_decorator(login_required, name='dispatch')
 class Patient_New(CreateView):
     model = Patient
     form_class = CreatePatientForm
     template_name = "patient_new.html"
     success_url = '/patients'
 
+@method_decorator(login_required, name='dispatch')
 class PatientDetail(DetailView):
     model = Patient
     template_name = 'patient_detail.html'

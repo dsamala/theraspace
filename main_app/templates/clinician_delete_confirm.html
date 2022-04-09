@@ -4,24 +4,26 @@
 <div class="home-container">
 
     <div class="side-nav">
-        <a href="/"><h1>Theraspace</h1></a>
-        <h2>Menu</h2>
-        <a href="/patients">Patients</a>
-        <a href="/clinicians">Clinicians</a>
+        <div><a class="logolink" href="/"><h1 class="logo-title">Theraspace</h1></a></div>
+        <a class="homelink" href="/patients"><img class="icon" src="{% static '../static/images/record.png' %}"></img>Patients</a>
+        <a class="homelink" href="/clinicians"><img class="icon" src="{% static '../static/images/license.png' %}"></img>Clinicians</a>
 
     </div>
 
-    <div class="form-container">
-       
-        <div class="clinician-record">
+    <div class="record-container">
+        <div>
             <h1>Delete Clinician Record?</h1>
             <form method="POST">
                 {% csrf_token %}
                 {{form}}
-                <input type="submit" value="Submit"/>
-                <a href="{% url 'clinician_detail' clinician.pk %}">Cancel</a>
+                <input class="delete-btn" type="submit" value="Delete"/>
+                <a class="form-btn" href="{% url 'clinician_detail' clinician.pk %}">Cancel</a>
             </form>
         </div>
+        
+    </div>
+    <div class="top-nav">
+        <a class="homelink" href="/logout"><img src="{% static '../static/images/logout.png' %}"></img> Log Out</a>
         
     </div>
 </div>

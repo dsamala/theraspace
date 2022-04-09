@@ -4,10 +4,9 @@
 <div class="home-container">
 
     <div class="side-nav">
-        <a href="/"><h1>Theraspace</h1></a>
-        <h2>Menu</h2>
-        <a href="/patients">Patients</a>
-        <a href="/clinicians">Clinicians</a>
+        <div><a class="logolink" href="/"><h1 class="logo-title">Theraspace</h1></a></div>
+        <a class="homelink" href="/patients"><img class="icon" src="{% static '../static/images/record.png' %}"></img>Patients</a>
+        <a class="homelink" href="/clinicians"><img class="icon" src="{% static '../static/images/license.png' %}"></img>Clinicians</a>
 
     </div>
 
@@ -21,6 +20,9 @@
                 <input type="submit" value="Submit"/>
             </form>
         </div>
+    </div>
+    <div class="top-nav">
+        <a class="homelink" href="/logout"><img src="{% static '../static/images/logout.png' %}"></img> Log Out</a>
         
     </div>
 </div>

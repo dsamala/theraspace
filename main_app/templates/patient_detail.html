@@ -4,36 +4,48 @@
 <div class="home-container">
 
     <div class="side-nav">
-        <a href="/"><h1>Theraspace</h1></a>
-        <h2>Menu</h2>
-        <a href="/patients">Patients</a>
-        <a href="/clinicians">Clinicians</a>
+        <div><a class="logolink"     href="/"><h1 class="logo-title">Theraspace</h1></a></div>
+        <a class="homelink" href="/patients"><img class="icon" src="{% static '../static/images/record.png' %}"></img>Patients</a>
+        <a class="homelink" href="/clinicians"><img class="icon" src="{% static '../static/images/license.png' %}"></img>Clinicians</a>
     </div>
 
     <div class="list-container">
        
-        <div class="patient-list">
-            <h1>Patient Details</h1>
-                <p>{{patient.lastname}}</p>
-                <p>{{patient.firstname}}</p>
-                <p>{{patient.age}}</p>
-                <p>{{patient.address}}</p>
-                <p>{{patient.zip}}</p>
-                <p>{{patient.diagnosis}}</p>
-                <p>{{patient.date_created}}</p>
-                <p>{{patient.date_updated}}</p>
-                
-                {% for clinician in patient.clinician.all %}
-                <p>{{clinician.name}}</p>
-                <p>{{clinician.discipline}}</p>
-                {% endfor %}
+        <div class="record-container">
+            <div class="record-info">
+                <h1 class="key-header">{{patient.lastname}}, {{patient.firstname}}</h1>
+                <div class="sub-heading">
+                <h3>Diagnosis: {{patient.diagnosis}}</h3> 
+                <h3>Age: {{patient.age}}</h3> 
+                <h3>Gender: {{patient.gender}}</h3> 
+                </div>
+                <div class="sub-heading">
+                <h3>Address: {{patient.address}}</h3> 
+                <h3>Zip: {{patient.zip}}</h3> 
+                </div>
+                <div class="record-modified">
+                <h4>Record Created: {{patient.date_created}}</h4>
+                <h4>Record Updated: {{patient.date_updated}}</h4>
+                </div>
+                <h2 class="list-header">Assigned Clinician/s:</h2>
+                    
+                    <div class="assigned-key">
+                        {% for clinician in patient.clinician.all %}
+                        <h2>{{clinician.name}}, {{clinician.discipline}}</h2>
+                        {% empty %}
+                        <h2>Patient has no assigned clinicians.</h2>
+                        {% endfor %}
+                    </div>
+            </div>
+            <div class="patient-actions">
+                <a class="form-btn" href="{% url 'patient_update' patient.pk %}">Update</a>
+                <a class="delete-btn" href="{% url 'patient_delete' patient.pk %}">Delete</a>
+            </div>
         </div>
+    </div>
+    <div class="top-nav">
+        <a class="homelink" href="/logout"><img src="{% static '../static/images/logout.png' %}"></img> Log Out</a>
         
-        <div class="patient-actions">
-            <a href="{% url 'patient_update' patient.pk %}">Update</a>
-            <a href="{% url 'patient_delete' patient.pk %}">Delete</a>
-        </div>
-
     </div>
 </div>
 {% endblock %}

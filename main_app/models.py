@@ -9,8 +9,8 @@ DISCIPLINE_CHOICES = (
 )
 
 GENDER_CHOICES = (
-    ("f", "female"),
-    ("m", "male")
+    ("F", "female"),
+    ("M", "male")
 )
 
 class Clinician(models.Model):
