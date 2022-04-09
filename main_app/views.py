@@ -57,7 +57,7 @@ def signup_view(request):
             user = form.save()
             login(request, user)
             print('HEY', user.username)
-            return HttpResponseRedirect('/user/'+str(user))
+            return HttpResponseRedirect('/')
         else:
             return render(request, 'signup.html', {'form': form})
 
@@ -92,7 +92,7 @@ class PatientDetail(DetailView):
     model = Patient
     template_name = 'patient_detail.html'
 
-
+@method_decorator(login_required, name='dispatch')
 class PatientUpdate(UpdateView):
     model = Patient
     form_class = UpdatePatientForm
@@ -100,11 +100,13 @@ class PatientUpdate(UpdateView):
     def get_success_url(self):
         return reverse('patient_detail', kwargs={'pk': self.object.pk})
 
+@method_decorator(login_required, name='dispatch')
 class PatientDelete(DeleteView):
     model = Patient
     template_name = 'patient_delete_confirm.html'
     success_url = '/patients'
 
+@method_decorator(login_required, name='dispatch')
 class ClinicianList(TemplateView):
     template_name = 'clinician_list.html'
     def get_context_data(self, **kwargs):
@@ -119,6 +121,7 @@ class ClinicianList(TemplateView):
             context["clinicians"] = Clinician.objects.filter(patient__isnull=True)
         return context
 
+@method_decorator(login_required, name='dispatch')
 class Clinician_New(CreateView):
     model = Clinician
     fields = ['name', 'discipline']
@@ -126,13 +129,14 @@ class Clinician_New(CreateView):
     success_url = '/clinicians'
 
 
+@method_decorator(login_required, name='dispatch')
 def clinician_show(request, clinician_id):
     clinician = Clinician.objects.get(id=clinician_id)
     patients = list(clinician.patient_set.all())
     print(patients)
     return render(request, 'clinician_detail.html', {'clinician': clinician, 'patients': patients})        
 
-
+@method_decorator(login_required, name='dispatch')
 class ClinicianUpdate(UpdateView):
     model = Clinician
     fields = ['name', 'discipline']
@@ -140,6 +144,7 @@ class ClinicianUpdate(UpdateView):
     def get_success_url(self):
         return reverse('clinician_detail', kwargs={'pk': self.object.pk})
 
+@method_decorator(login_required, name='dispatch')
 class ClinicianDelete(DeleteView):
     model = Clinician
     template_name = 'clinician_delete_confirm.html'
