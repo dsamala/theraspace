@@ -1,0 +1,538 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f6f5f7;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.error-div{
+    background-color: transparent;
+    position:relative;
+    margin: auto;
+    width: 150px;
+    height: 150px;
+}
+
+.errorlist{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    height: 150px;
+    color: red;
+}
+
+
+:root{
+    --teal: #00AEAE;
+    --gray: #979797;
+    --white: #FFFFFF;
+}
+
+/* Login CSS */
+.container{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    margin: 0 10%;
+}
+
+.sign-in-container{
+    position: absolute, sticky;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 15%;
+    width: 700px;
+    max-width: 100%;
+    min-height: 480px;
+    background-color: white;
+    border-radius: 15px 0 0 15px;
+}
+
+.sign-in-overlay{
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 15%;
+    width: 700px;
+    max-width: 100%;
+    min-height: 480px;
+    background-color: var(--teal);
+    color: white;
+    border-radius: 0px 15px 15px 0px;
+}
+
+.sign-in-header{
+    font-size: 45px;
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 2%
+}
+
+.form-container form{
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.form-container input[type="text"]{
+    border: solid 1px gray;
+    background-color: white;
+    padding: 12px 15px;
+    margin: 8px 0;
+    width: 100%;
+}
+
+.form-container input[type="password"]{
+    border: solid 1px gray;
+    background-color: white;
+    padding: 12px 15px;
+    margin: 8px 0;
+    width: 100%;
+}
+
+.form-container text{
+    float: left;
+}
+
+.form-container input:focus{
+    outline: none;
+  	border: 1px solid #4EDBC1;
+}
+
+
+.btn{
+    border-radius: 15px;
+    border: none;
+    padding: 12px 45px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background-color: #808080;
+    color: white;
+    margin-top: 5%;
+}
+
+
+/* Home */
+
+.logo-title{
+    font-style: bold;
+    font-size: 35px;
+    justify-content: center;
+}
+
+.icon{
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+}
+
+.home-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.list-container{
+    display: flex;
+    flex-direction: row;
+    height: 50%;
+    max-height: 100vh;
+    max-width: 100vw;
+    width: 50%;
+    margin-top: 6%;
+}
+
+.side-nav{
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    width: 245px;
+    height: 125vh;
+    max-height: 100%;
+    padding: 20px;
+    background-color: var(--teal);
+    border-radius: 0px 15px 15px 0px;
+}
+
+.top-nav{
+    overflow:hidden;
+    width: 100%;
+    max-width: 100%;
+}
+.top-nav a{
+    float: right;
+    text-align: center;
+    padding: 14px 16px;
+    font-size: 17px;
+}
+
+.logolink{
+    padding: .5rem;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: Black;
+}
+
+.homelink{
+    padding: .5rem;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: Black;
+}
+
+.homelink:hover{
+    color: white;
+}
+
+.btn-search{
+    border-radius: 15px;
+    border: none;
+    padding: 1px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background-color: #808080;
+    color: white;
+}
+
+.list-header{
+    text-align: center;
+    margin-top: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 200;
+}
+
+.patient-list{
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color:var(--gray);
+    margin: 0px 50px 50px 25px;
+    width: 100rem;
+    max-width: 100vw;
+    height: 85vh;
+}
+
+.patient-table{
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 100%;
+    justify-content: center;
+    border-collapse: collapse;
+}
+
+.patient-table th{
+    background-color: var(--teal);
+    color: var(--white);
+    text-align: left;
+    max-width: 100%;
+    text-transform: uppercase;
+}
+
+.patient-table th, td{
+    padding: 12px 15px;
+    font-weight: 300;
+}
+
+.patient-table tr:hover, tr:focus-within{
+    background-color: var(--white);
+    outline: none;
+    cursor: pointer;    
+}
+
+.patient-table td > a:first-child{
+    padding: 0;
+    text-decoration: none;
+    color: black;
+    z-index: 0;
+}
+
+
+.search-box{
+   display: flex;
+   flex-direction: row;
+}
+
+.search-box input{
+    border: 1px solid black;
+    border-radius: 3.5px;
+    height: 25px;
+}
+
+.search-box input:focus{
+    outline: none;
+    border: 1px solid #4EDBC1;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+}
+
+.switch-input {
+    display: none;
+  }
+
+.switch-label {
+    display: block;
+    width: 48px;
+    height: 24px;
+    text-indent: -150%;
+    clip: rect(0 0 0 0);
+    color: transparent;
+    user-select: none;
+}
+.switch-label::before,
+.switch-label::after {
+    content: "";
+    display: block;
+    position: absolute;
+    cursor: pointer;
+}
+.switch-label::before {
+    margin: auto;
+    width: 50px;
+    height: 50%;
+    background-color: #dedede;
+    border-radius: 9999em;
+    -webkit-transition: background-color 0.25s ease;
+    transition: background-color 0.25s ease;
+}
+.switch-label::after {
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.45);
+    -webkit-transition: left 0.25s ease;
+    transition: left 0.25s ease;
+  }
+.switch-input:checked + .switch-label::before {
+    background-color: var(--gray);
+  }
+.switch-input:checked + .switch-label::after {
+    left: 24px;
+  }
+
+.switch-btn{
+    border-radius: 15px;
+    border: 1px solid black;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background-color: #808080;
+    color: white;
+    margin-top: 5%;
+    width: 100px;
+}
+  
+.clinician-list{
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: var(--gray);
+    margin: 0px 50px 50px 25px;
+    width: 100em;
+    max-width: 100vw;
+    height: 85vh;
+}
+
+
+.record-container{
+    border: 1px black solid;
+    border-radius: 5px;
+    padding: 25px;
+    width: 500em;
+    max-width: 100%;
+    margin: 25px;
+    background-color: var(--white);
+}
+
+.patient-record form{
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column; 
+    background-color: var(--white);
+    margin: 15px;
+}
+
+
+.patient-record input:focus{
+    outline: none;
+    border: 1px solid var(--teal);
+}
+
+.patient-record input[name="firstname"], input[name="lastname"]{
+    border: solid 1px gray;
+    background-color: white;
+    padding: 12px 15px;
+    margin: 8px 0;
+    width: 45%;
+}
+
+.patient-record input[name="age"]{
+    border: solid 1px gray;
+    background-color: white;
+    padding: 12px 15px;
+    margin: 8px 0;
+    width: 5em;
+    height: 2em;
+}
+
+.patient-record select[name="gender"], input[name="zip"]{
+    border: solid 1px gray;
+    background-color: white;
+    font-size: 15px;
+    padding: 12px 15px;
+    margin: 8px 0;
+    width: 17%;
+
+}
+
+.patient-record input[name="address"], input[name="diagnosis"]{
+    border: solid 1px gray;
+    background-color: white;
+    padding: 12px 15px;
+    margin: 8px 0;
+    height: 50px;
+    width: 65%;
+}
+
+.patient-record label{
+    border: none;
+    padding: 5px;
+    font-size: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: Black;
+}
+
+.form-btn{
+    border-radius: 15px;
+    border: none;
+    padding: 12px 45px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background-color: #808080;
+    color: white;
+    margin-top: 5%;
+    width: 25%;
+}
+
+.clinician-record form{
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column; 
+    background-color: var(--white);
+    margin: 15px;
+}
+
+.clinician-record label{
+    border: none;
+    padding: 5px;
+    font-size: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: Black;
+}
+
+.clinician-record input[name="name"]{
+    border: solid 1px gray;
+    background-color: white;
+    padding: 12px 15px;
+    margin: 8px 0;
+    width: 45%;
+}
+
+
+.clinician-record select[name="discipline"]{
+    border: solid 1px gray;
+    background-color: white;
+    padding: 12px 15px;
+    margin: 8px 0;
+    width: 45%;
+}
+
+
+.record-info {
+    display: flex;
+    margin: 10px;
+    flex-wrap: wrap;
+    flex-direction: column;
+    max-height: 100%;
+}
+
+.record-info h3, h4{
+    color: var(--gray);
+    padding: 5px;
+}
+
+.key-header{
+    text-align: left;
+    margin-top: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 200;
+    font-size: 45px;
+}
+
+.assigned-key{
+    border: 1px solid var(--gray);
+    margin: 5px;
+    padding: 3px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sub-heading{
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    padding: 0px 20px 0px 0px;
+}
+
+
+.sub-heading h3{
+    font-size: 25px;
+}
+
+.record-modified{
+    display: flex;
+    flex-direction: column;
+    font-size: 17px;
+    margin-top: 6%;
+}
+
+.delete-btn{
+    border-radius: 15px;
+    border: none;
+    padding: 12px 45px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background-color: #ff6781;
+    color: white;
+    margin-top: 5%;
+    width: 20%;
+}
+
