@@ -45,6 +45,11 @@ a {
     margin: 0 10%;
 }
 
+.logo-container{
+    min-width: 200px;
+    min-height: 50px;
+}
+
 .sign-in-container{
     position: absolute, sticky;
     display: flex;
@@ -266,6 +271,7 @@ a {
 .search-box{
    display: flex;
    flex-direction: row;
+   margin-bottom: 10px;
 }
 
 .search-box input{
@@ -340,7 +346,7 @@ a {
     background-color: #808080;
     color: white;
     margin-top: 5%;
-    width: 100px;
+    width: 200px;
 }
   
 .clinician-list{
