@@ -129,11 +129,9 @@ class Clinician_New(CreateView):
     success_url = '/clinicians'
 
 
-@method_decorator(login_required, name='dispatch')
 def clinician_show(request, clinician_id):
     clinician = Clinician.objects.get(id=clinician_id)
     patients = list(clinician.patient_set.all())
-    print(patients)
     return render(request, 'clinician_detail.html', {'clinician': clinician, 'patients': patients})        
 
 @method_decorator(login_required, name='dispatch')
