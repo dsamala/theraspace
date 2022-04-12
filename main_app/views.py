@@ -139,8 +139,8 @@ class ClinicianUpdate(UpdateView):
     model = Clinician
     fields = ['name', 'discipline']
     template_name = 'clinician_update.html'
-    def get_success_url(self):
-        return reverse('clinician_detail', kwargs={'pk': self.object.pk})
+    success_url = '/clinicians'
+
 
 @method_decorator(login_required, name='dispatch')
 class ClinicianDelete(DeleteView):
