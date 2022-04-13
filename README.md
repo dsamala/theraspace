@@ -23,7 +23,7 @@ Theraspace is a simple patient management portal that provides administrative to
 
 
 ## Get Started
-See deployed app here: 
+See deployed app here: https://theraspace.herokuapp.com/
 
 ### User Story
 - As a user (AAU), I want to sign up for an account
