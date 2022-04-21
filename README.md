@@ -40,8 +40,6 @@ See deployed app here: https://theraspace.herokuapp.com/
 - AAU, I want to see list of patients do not have clinicians
 - AAU, I want to see list of clinicians do not have patients
 
-### User Flow
-![Theraspace - User Flow](https://user-images.githubusercontent.com/92316626/160980332-6c7ca2d8-089f-4a92-8707-3e33b4522887.jpg)
 
 ### Wireframe
 ![Screen Shot 2022-04-20 at 8 50 44 PM](https://user-images.githubusercontent.com/92316626/164368505-419290a5-23a8-405c-b47e-deee4508e863.png)
