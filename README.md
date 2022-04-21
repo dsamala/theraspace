@@ -23,7 +23,7 @@ Theraspace is a simple patient management portal that provides administrative to
 
 
 ## Get Started
-See deployed app here: https://theraspace.herokuapp.com/
+See deployed app here: 
 
 ### User Story
 - As a user (AAU), I want to sign up for an account
@@ -40,28 +40,26 @@ See deployed app here: https://theraspace.herokuapp.com/
 - AAU, I want to see list of patients do not have clinicians
 - AAU, I want to see list of clinicians do not have patients
 
+### User Flow
+![Theraspace - User Flow](https://user-images.githubusercontent.com/92316626/160980332-6c7ca2d8-089f-4a92-8707-3e33b4522887.jpg)
 
 ### Wireframe
-![Screen Shot 2022-04-20 at 8 50 44 PM](https://user-images.githubusercontent.com/92316626/164368505-419290a5-23a8-405c-b47e-deee4508e863.png)
-
+![Screen Shot 2022-03-30 at 8 35 04 PM](https://user-images.githubusercontent.com/92316626/160971318-c73ae310-c31d-43fa-91f1-70ba599de186.png)
 
 ### Data ERD 
-![Screen Shot 2022-04-20 at 8 51 16 PM](https://user-images.githubusercontent.com/92316626/164368560-ed3266b0-4444-4a8f-b9d3-6799b314e2ba.png)
-
-
+![Theraspace (P4 - ERD)](https://user-images.githubusercontent.com/92316626/160757925-c5940813-e966-4457-9ba2-07062cf5a643.png)
 
 ## Technologies Used:
-- React Native with Expo
-- MongoDB Atlas
-- Express
-- Bcrypt
-- JWT
+- Python
+- Django
+- PostgreSQL
 
 
 ## Unsolved Problems:
 
 
 ## Future Enhancements:
--
-
+- Schedule Functionality that allows for tracking patients
+- File upload for all patient-related documents
+- Field records that allows for sharing notes between users/admins
 
